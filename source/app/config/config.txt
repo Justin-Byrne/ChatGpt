@@ -1,0 +1,14 @@
+#### 	OPEN API ORG
+# Example:
+# 	org-0123456789ABCDEFGHIJKLMN
+###########################################################
+org-Ro4HHf3ig7IQFG69E0JXwid9
+
+#### 	OPEN API KEY
+# Example:
+# 	sk-0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEF
+###########################################################
+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
+
+# OPEN_API_KEY = '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'
+# OPEN_API_ORG = 'org-Ro4HHf3ig7IQFG69E0JXwid9'
