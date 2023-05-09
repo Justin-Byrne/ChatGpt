@@ -17,7 +17,7 @@ _dump/
 **/*-{stash-[0-9]}.*
 **/*-{stash-[0-9]}
 
-#build
+## Build
 build
 __pycache__
 commands.txt
@@ -27,4 +27,8 @@ test-generator.py
 html-docs
 CHANGECONTROL.md
 build/readme
+docs/models.js
 readme.sh
+
+## Config
+config/config.txt

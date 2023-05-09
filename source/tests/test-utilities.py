@@ -62,6 +62,13 @@ class TestUtil ( unittest.TestCase ):
 
 		pass
 
+	def test_openai_connect   ( self ): 						# 07
+
+		ORG = '0123456789ABCDEFGHIJKLMN'
+		KEY = '0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEF'
+
+		self.assertEqual ( Util.openai_connect ( ORG, KEY ), ERROR )
+
 # TEST MAIN
 if __name__ == '__main__':
 

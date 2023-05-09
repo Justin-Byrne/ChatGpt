@@ -5,6 +5,9 @@ from .system.validation.is_flag      	import is_flag
 from .system.get_command_type        	import get_command_type
 from .system.get_commands 			 	import get_commands
 
+# CUSTOM
+from .custom.connect.openai_connect 	import openai_connect
+
 class Util:
 
 	def __init__ (  ): pass
@@ -24,3 +27,7 @@ class Util:
 	def get_command_type ( command  ) 		 	  				: return get_command_type ( command  )
 
 	def get_commands     ( commands ) 		 	  				: return get_commands     ( commands )
+
+	#### 	CUSTOM 	########################################
+
+	def openai_connect   ( API_ORG, API_KEY ) 					: return openai_connect   ( API_ORG, API_KEY )
