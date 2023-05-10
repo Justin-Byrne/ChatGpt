@@ -1,6 +1,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.1] - 2023-05-10
+### Added
+- Custom utilities (file):
+  - `write_file ( )`
+
+- Custom utilities (general):
+  - `get_list_models ( )`
+
+- Folders
+  - `cache` directory data assets
+
+### Changed
+- Custom utilities (general):
+  - `get_list_models ( )` >> changed to >> `parse_list_models ( )`
+
 ## [0.2.0] - 2023-05-09
 ### Added
 - Custom utilities (connect):
@@ -44,7 +59,8 @@ All notable changes to this project will be documented in this file.
 
 | Version | Date       | Commit                                                            | Comments 														                             |
 | :-----: | :--------: | :---------------------------------------------------------------: | :---------------------------------------------------------------- |
-| 0.2.0   | 2023-05-09 | Current                                                           | Implemented OpenAI connection & authentication
+| 0.2.1   | 2023-05-10 | Current                                                           | Implemented basic cache system, and general refactoring
+| 0.2.0   | 2023-05-09 | [0bb4157](https://github.com/Justin-Byrne/ChatGpt/commit/0bb4157) | Implemented OpenAI connection & authentication
 | 0.1.0   | 2023-05-08 | [bf8ffc6](https://github.com/Justin-Byrne/ChatGpt/commit/bf8ffc6) | Implemented system utilities & validation methods
 | 0.0.0   | 2023-05-08 | [447d129](https://github.com/Justin-Byrne/ChatGpt/commit/447d129) | initial upload
 

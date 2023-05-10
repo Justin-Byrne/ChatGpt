@@ -11,11 +11,13 @@ def main ( commands ):
 
 	if arguments != ERROR:
 
-		model_list = Util.openai_connect ( arguments [ 'org' ], arguments [ 'key' ] )
+		list_models = Util.openai_connect ( arguments [ 'org' ], arguments [ 'key' ] )
 
-		if model_list != ERROR:
+		if list_models != ERROR:
 
-			print ( model_list )
+			list = Util.get_list_models ( list_models )
 
+
+			print ( 'list:', list )
 
 main ( sys.argv )

@@ -7,6 +7,7 @@ from .system.get_commands 			 	import get_commands
 
 # CUSTOM
 from .custom.connect.openai_connect 	import openai_connect
+from .custom.get_list_models			import get_list_models
 
 class Util:
 
@@ -20,9 +21,9 @@ class Util:
 
 	def is_file 	 	 ( path,   type = None )  				: return is_file          ( path, type )
 
-	def is_flag      	 ( string, flag = '-'  )  				: return is_flag 	      ( string, flag )
+	def is_flag          ( string, flag = '-'  )  				: return is_flag 	      ( string, flag )
 
-	# COMMAND
+	# GENERAL
 
 	def get_command_type ( command  ) 		 	  				: return get_command_type ( command  )
 
@@ -30,4 +31,10 @@ class Util:
 
 	#### 	CUSTOM 	########################################
 
+	# CONNECT
+
 	def openai_connect   ( API_ORG, API_KEY ) 					: return openai_connect   ( API_ORG, API_KEY )
+
+	# GENERAL
+
+	def get_list_models  ( list )								: return get_list_models  ( list )
