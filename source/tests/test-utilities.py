@@ -13,7 +13,8 @@ from app.utilities.util    import Util
 ORG='0123456789ABCDEFGHIJKLMN'
 KEY='0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEF'
 
-# WDIR  = f"{os.getcwd ( )}/cases"
+# WDIR  = f"{os.getcwd ( )}"
+WDIR  = abspath ( '..' )
 # FILE  = f"{WDIR}/test-file.txt"
 # FLAG  = "-f"
 # DIRE  = f"{WDIR}"
@@ -58,16 +59,30 @@ class TestUtil ( unittest.TestCase ):
 
 		# self.assertEqual ( Util.get_command_type ( DIRE ), 'directory' )
 
-	def test_get_commands     ( self ): 						# 06
+	# def test_get_commands     ( self ): 						# 06
 
-		pass
+		# pass
 
-	def test_openai_connect   ( self ): 						# 07
+	# def test_openai_connect   ( self ): 						# 07
 
-		ORG = '0123456789ABCDEFGHIJKLMN'
-		KEY = '0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEF'
+		# ORG = '0123456789ABCDEFGHIJKLMN'
+		# KEY = '0123456789ABCDEFGHIJKLMNOPQRSTUV0123456789ABCDEF'
 
-		self.assertEqual ( Util.openai_connect ( ORG, KEY ), ERROR )
+		# self.assertEqual ( Util.openai_connect ( ORG, KEY ), ERROR )
+
+	def test_get_file_info 	( self ):				        # 08
+
+		DIRE = f'{WDIR}/app/cache'
+
+		FILE = f'{DIRE}/models.info'
+
+		# print ( 'WDIR: ', f'{WDIR}/app/cache' )
+
+		# file = ''
+
+		info = Util.get_file_info ( FILE )
+
+		# print ( 'info: ', info )
 
 # TEST MAIN
 if __name__ == '__main__':

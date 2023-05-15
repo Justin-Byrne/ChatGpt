@@ -22,12 +22,14 @@ build
 __pycache__
 commands.txt
 test-generator.py
+cache
 
 ## Docs
+!CHANGELOG.md
 html-docs
 CHANGECONTROL.md
 build/readme
-docs/models.js
+docs
 readme.sh
 
 ## Config

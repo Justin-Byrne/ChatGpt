@@ -4,6 +4,17 @@ from utilities.util     import Util
 
 ERROR = -1
 
+def view_arguments ( arguments ):
+
+	print ( '-' * 4, '[ Arguments ]', '-' * 41 )
+
+	for argument in arguments:
+
+		print ( f'{argument}: ', arguments [ argument ] )
+
+	print ( '-' * 60 )
+
+
 def main ( commands ):
 
 	arguments = Util.get_commands ( commands )
@@ -11,13 +22,9 @@ def main ( commands ):
 
 	if arguments != ERROR:
 
-		list_models = Util.openai_connect ( arguments [ 'org' ], arguments [ 'key' ] )
+		view_arguments ( arguments ) 	### TEMPORARY ###
 
-		if list_models != ERROR:
+		Util.get_models ( arguments )
 
-			list = Util.get_list_models ( list_models )
-
-
-			print ( 'list:', list )
 
 main ( sys.argv )

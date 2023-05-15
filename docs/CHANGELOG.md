@@ -1,6 +1,32 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.2.2] - 2023-05-15
+### Added
+- Implemented AI model selection via command line and from `config.txt`
+
+- Custom utilities (general)
+  - `fetch_models ( )`
+
+- Custom utilities (file):
+  - `read_from_cache ( )`
+  - `write_to_cache ( )`
+
+- Custom utilities (validation):
+  - `is_cached_file ( )`
+
+### Changed
+- Custom utilities (connect):
+  - `openai_connect ( )` >> changed to >> `openai_certify ( )`
+
+- Custom utilities (general):
+  - `parse_list_models ( )` >> changed to >> `parse_models ( )` & `parse_model ( )`
+  - `get_list_models ( )`   >> changed to >> `get_models ( )`
+
+### Removed
+- Custom utilities (file)
+  - `write_file ( )`
+
 ## [0.2.1] - 2023-05-10
 ### Added
 - Custom utilities (file):
@@ -59,7 +85,8 @@ All notable changes to this project will be documented in this file.
 
 | Version | Date       | Commit                                                            | Comments 														                             |
 | :-----: | :--------: | :---------------------------------------------------------------: | :---------------------------------------------------------------- |
-| 0.2.1   | 2023-05-10 | Current                                                           | Implemented basic cache system, and general refactoring
+| 0.2.2   | 2023-05-15 | Current                                                           | Implemented AI model selection via command line and from `config.txt`
+| 0.2.1   | 2023-05-10 | [cc77804](https://github.com/Justin-Byrne/ChatGpt/commit/cc77804) | Implemented basic cache system, and general refactoring
 | 0.2.0   | 2023-05-09 | [0bb4157](https://github.com/Justin-Byrne/ChatGpt/commit/0bb4157) | Implemented OpenAI connection & authentication
 | 0.1.0   | 2023-05-08 | [bf8ffc6](https://github.com/Justin-Byrne/ChatGpt/commit/bf8ffc6) | Implemented system utilities & validation methods
 | 0.0.0   | 2023-05-08 | [447d129](https://github.com/Justin-Byrne/ChatGpt/commit/447d129) | initial upload

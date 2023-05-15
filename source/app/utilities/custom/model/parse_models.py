@@ -1,23 +1,24 @@
 import json
 
-def parse_list_models ( list ):
+def parse_models ( models ):
 
 	#### 	GLOBALS 	####################################
 
 	result = { }
 
-	temp   = { 'data': { }, 'permissions': { } }
 
-
-	model_data   = json.loads ( str ( list ) )
+	model_data   = json.loads ( str ( models ) )
 
 	model_amount = len ( model_data [ 'data' ] )
 
 	#### 	FUNCTIONS 	####################################
 
-	def filter_list ( ):
+	def filter_models ( ):
 
 		for data in model_data [ 'data' ]:
+
+			temp = { 'data': { }, 'permissions': { } }
+
 
 			for entry in data:
 
@@ -31,7 +32,7 @@ def parse_list_models ( list ):
 
 					temp [ 'data' ] [ entry ] = data [ entry ]
 
-
+			# RESULT
 			ROOT = temp [ 'data' ] [ 'root' ]
 
 
@@ -40,9 +41,13 @@ def parse_list_models ( list ):
 				result [ ROOT ]                   = temp [    'data'     ]
 				result [ ROOT ] [ 'permissions '] = temp [ 'permissions' ]
 
+			else:
+
+				print ( f'>> [ERROR] parse_list_models.py\n\t~ "{ROOT}" is already a valid model !' )
+
 	#### 	LOGIC 	########################################
 
-	filter_list ( )
+	filter_models ( )
 
 
 	return result

@@ -1,9 +1,6 @@
 import re
 import os
 
-from os.path 					import dirname, abspath, expanduser
-from .get_command_type 			import get_command_type
-
 def parse_commands ( commands ):
 
 	#### 	GLOBALS 	####################################
@@ -14,8 +11,9 @@ def parse_commands ( commands ):
 	}
 
 	regexes = {
-		'org': r'\s*-o\s*|\s*--org\s*',
-		'key': r'\s*-k\s*|\s*--key\s*'
+		'org':   r'\s*-o\s*|\s*--org\s*',
+		'key':   r'\s*-k\s*|\s*--key\s*',
+		'model': r'\s*-m\s*|\s*--model\s*'
 	}
 
 	#### 	FUNCTIONS 	####################################
@@ -49,7 +47,7 @@ def parse_commands ( commands ):
 
 				else:
 
-					print ( 'parse_commands.py: org key needs to be at least 24 characters long !' )
+					print ( ' >> [ERROR] parse_commands.py:\n\t~ Org key needs to be at least 24 characters long !' )
 
 
 			case 'key':
@@ -64,7 +62,7 @@ def parse_commands ( commands ):
 
 				else:
 
-					print ( 'parse_commands.py: secret key needs to be at least 48 characters long !' )
+					print ( ' >> [ERROR] parse_commands.py\n\t~ Secret key needs to be at least 48 characters long !' )
 
 	def check_command_line ( ):
 
@@ -77,28 +75,70 @@ def parse_commands ( commands ):
 
 				if ( re.search ( regexes [ regex ], command ) ):
 
-					if arguments [ regex ] == None:
+					value  = commands [ i + 1 ]
 
-						value  = commands [ i + 1 ]
-
-						length = len ( value )
+					length = len ( value )
 
 
-						validate_keys ( regex, value )
+					match regex:
+
+						case 'org' | 'key':
+
+							validate_keys ( regex, value )
+
+						case 'model':
+
+							arguments.update ( { regex: value } )
 
 	def check_config_file  ( ):
 
 		config_regex = {
-			'org': r'OPEN\s*API\s*ORG',
-			'key': r'OPEN\s*API\s*KEY'
+			'org':   r'OPEN\s*API\s*ORG',
+			'key':   r'OPEN\s*API\s*KEY',
+			'model': r'\s*MODELS\s*'
 		}
 
 
 		for regex in config_regex:
 
-			if arguments [ regex ] == None:
+			if regex in arguments.keys ( ):
 
-				value   = None
+				if arguments [ regex ] == None:
+
+					value   = None
+
+					lines   = open ( './config/config.txt', 'r' ).readlines ( )
+
+					capture = False
+
+
+					for line in lines:
+
+						if re.search ( config_regex [ regex ], line ):
+
+							capture = True
+
+							continue
+
+
+						if capture:
+
+							if line [ 0 ] in [ '\n', '\r\n', '#' ]: continue
+
+							else:
+
+								value = line.replace ( '\n', '' )
+
+
+						if value:
+
+							validate_keys ( regex, value )
+
+							break
+
+			else:
+
+				values  = [ ]
 
 				lines   = open ( './config/config.txt', 'r' ).readlines ( )
 
@@ -106,6 +146,11 @@ def parse_commands ( commands ):
 
 
 				for line in lines:
+
+					if capture and line [ 0 ] == '\n':
+
+						break
+
 
 					if re.search ( config_regex [ regex ], line ):
 
@@ -118,15 +163,16 @@ def parse_commands ( commands ):
 
 						if line [ 0 ] in [ '\n', '\r\n', '#' ]: continue
 
-						else: value = line.replace ( '\n', '' )
+						else:
+
+							values.append ( line.replace ( '\n', '' ) )
 
 
-					if value:
+					if len ( values ) > 0:
 
-						validate_keys ( regex, value )
+						arguments.update ( { regex: '|'.join ( values ) } )
 
-						break
-
+	#### 	LOGIC 	########################################
 
 	check_command_line ( )
 
