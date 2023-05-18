@@ -1,13 +1,12 @@
 # SYSTEM
 from .system.validation.is_directory 	import is_directory
 from .system.validation.is_file      	import is_file
-from .system.validation.is_flag      	import is_flag
-from .system.get_command_type       	import get_command_type
 from .system.get_commands 			 	import get_commands
 
 # CUSTOM
-from .custom.connect.openai_certify		import openai_certify
-from .custom.get_models					import get_models
+from .custom.connect.openai_certify 	import openai_certify
+from .custom.model.get_models			import get_models
+from .custom.prompt.get_completion 		import get_completion
 
 class Util:
 
@@ -17,30 +16,24 @@ class Util:
 
 	# VALIDATION
 
-	def is_directory 	 ( path ) 				  			: return is_directory     ( path )
+	def is_directory   ( path ) 				  			: return is_directory   ( path )
 
-	def is_file 	     ( path,   type = None ) 			: return is_file          ( path, type )
-
-	def is_flag          ( string, flag = '-'  )  			: return is_flag 	      ( string, flag )
+	def is_file 	   ( path,   type = None ) 				: return is_file        ( path, type )
 
 	# GENERAL
 
-	def get_command_type ( command  ) 		 	  			: return get_command_type ( command  )
-
-	def get_commands     ( commands ) 		 	  			: return get_commands     ( commands )
-
-	# FILE
-
-	def get_file_info	 ( file )							: return get_file_info 	  ( file )
+	def get_commands   ( commands ) 		 	  			: return get_commands   ( commands )
 
 	#### 	CUSTOM 	########################################
 
 	# CONNECT
 
-	def openai_certify   ( API_ORG, API_KEY ) 				: return openai_certify   ( API_ORG, API_KEY )
+	def openai_certify ( API_ORG, API_KEY ) 				: return openai_certify ( API_ORG, API_KEY )
 
-	# GENERAL
+	# MODEL
 
-	def get_models       ( arguments )                 		: return get_models       ( arguments )
+	def get_models     ( arguments )                 		: return get_models     ( arguments )
 
-	# def get_model        ( arguments )                 		: return get_model        ( arguments )
+	# PROMPT
+
+	def get_completion 	   ( arguments )					: return get_completion 	( arguments )

@@ -1,7 +1,7 @@
 import json
 
-from .validation.is_cached_file_old import is_cached_file_old
-from .fetch_models 					import fetch_models
+from ..validation.is_cached_file_old 	import is_cached_file_old
+from .fetch_models 						import fetch_models
 
 ERROR = -1
 

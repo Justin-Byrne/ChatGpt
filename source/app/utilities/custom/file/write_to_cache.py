@@ -8,9 +8,7 @@ from stat 								import S_IREAD, S_IRGRP, S_IROTH
 from ...system.validation.is_file 		import is_file
 from ...system.validation.is_directory 	import is_directory
 
-
 PATH = f"{abspath ( '.' )}/cache"
-
 
 def write_to_cache ( filename, data, readonly = False ):
 

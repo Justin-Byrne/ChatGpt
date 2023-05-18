@@ -9,8 +9,6 @@ def parse_models ( models ):
 
 	model_data   = json.loads ( str ( models ) )
 
-	model_amount = len ( model_data [ 'data' ] )
-
 	#### 	FUNCTIONS 	####################################
 
 	def filter_models ( ):
@@ -32,7 +30,7 @@ def parse_models ( models ):
 
 					temp [ 'data' ] [ entry ] = data [ entry ]
 
-			# RESULT
+
 			ROOT = temp [ 'data' ] [ 'root' ]
 
 

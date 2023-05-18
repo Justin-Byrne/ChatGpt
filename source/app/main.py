@@ -26,5 +26,9 @@ def main ( commands ):
 
 		Util.get_models ( arguments )
 
+		response = Util.get_completion ( arguments )
+
+		print ( 'response: ', response )
+
 
 main ( sys.argv )
