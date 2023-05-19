@@ -2,6 +2,7 @@
 from .system.validation.is_directory 	import is_directory
 from .system.validation.is_file      	import is_file
 from .system.get_commands 			 	import get_commands
+from .system.debug.output 				import output
 
 # CUSTOM
 from .custom.connect.openai_certify 	import openai_certify
@@ -20,6 +21,10 @@ class Util:
 
 	def is_file 	   ( path,   type = None ) 				: return is_file        ( path, type )
 
+	# DEBUG
+
+	def output 		   ( source, message, type = 'ERROR' )	: return output 		( source, message, type )
+
 	# GENERAL
 
 	def get_commands   ( commands ) 		 	  			: return get_commands   ( commands )
@@ -36,4 +41,4 @@ class Util:
 
 	# PROMPT
 
-	def get_completion 	   ( arguments )					: return get_completion 	( arguments )
+	def get_completion ( arguments )						: return get_completion ( arguments )

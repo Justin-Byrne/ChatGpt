@@ -17,7 +17,7 @@ def fetch_models ( API_ORG, API_KEY, MODEL = None ):
 
 		except:
 
-			print ( '>> [ERROR] get_models.py\n\t~ Open AI connection failed !' )
+			print ( '>> [ERROR] fetch_models.py\n\t~ Open AI connection failed !' )
 
 			return ERROR
 
@@ -34,6 +34,8 @@ def fetch_models ( API_ORG, API_KEY, MODEL = None ):
 
 			write_to_cache ( f"models/{final [ 'root' ]}", final, True )
 
+			return True
+
 	else:
 
 		try:
@@ -44,7 +46,7 @@ def fetch_models ( API_ORG, API_KEY, MODEL = None ):
 
 		except:
 
-			print ( '>> [ERROR] get_models.py\n\t~ Open AI connection failed !' )
+			print ( '>> [ERROR] fetch_models.py\n\t~ Open AI connection failed !' )
 
 			return ERROR
 
@@ -60,3 +62,6 @@ def fetch_models ( API_ORG, API_KEY, MODEL = None ):
 			for model in dictionary:
 
 				write_to_cache ( f'models/{model}', dictionary [ model ], True )
+
+
+			return True

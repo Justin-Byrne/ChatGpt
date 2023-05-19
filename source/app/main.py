@@ -24,11 +24,13 @@ def main ( commands ):
 
 		view_arguments ( arguments ) 	### TEMPORARY ###
 
-		Util.get_models ( arguments )
+		if Util.get_models ( arguments ):
 
-		response = Util.get_completion ( arguments )
+			Util.get_completion ( arguments )
 
-		print ( 'response: ', response )
+		else:
+
+			Util.output ( 'main', 'Could not obtain open AI models !' )
 
 
 main ( sys.argv )

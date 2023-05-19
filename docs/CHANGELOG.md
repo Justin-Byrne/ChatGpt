@@ -1,6 +1,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [0.3.4] - 2023-05-19
+### Added
+- System utilities (debug):
+  - `output ( )`
+
+### Changed
+- Custom utilities (validation): refactored & optimized
+  - `is_cached_file_old ( )`
+
+- System utilities (time):
+  - `get_current_timestamp ( )` >> changed to >> `get_enumerated_timestamp ( )`
+
 ## [0.3.3] - 2023-05-18
 ### Added
 - Custom utilities (prompt):
@@ -108,7 +120,8 @@ All notable changes to this project will be documented in this file.
 
 | Version | Date       | Commit                                                            | Comments 														                             |
 | :-----: | :--------: | :---------------------------------------------------------------: | :---------------------------------------------------------------- |
-| 0.3.3   | 2023-05-18 | Current                                                           | Completion query implementation, with minor refactoring
+| 0.3.4   | 2023-05-19 | Current                                                           | General refactoring; implemented output debugging module
+| 0.3.3   | 2023-05-18 | [ffd1084](https://github.com/Justin-Byrne/ChatGpt/commit/ffd1084) | Completion query implementation, with minor refactoring
 | 0.2.2   | 2023-05-15 | [1b056fd](https://github.com/Justin-Byrne/ChatGpt/commit/1b056fd) | Implemented AI model selection via command line and from `config.txt`
 | 0.2.1   | 2023-05-10 | [cc77804](https://github.com/Justin-Byrne/ChatGpt/commit/cc77804) | Implemented basic cache system, and general refactoring
 | 0.2.0   | 2023-05-09 | [0bb4157](https://github.com/Justin-Byrne/ChatGpt/commit/0bb4157) | Implemented OpenAI connection & authentication

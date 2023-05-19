@@ -13,16 +13,28 @@ def get_models ( arguments ):
 
 			if is_cached_file_old ( 'models.info' ):
 
-				fetch_models ( arguments [ 'org' ], arguments [ 'key' ] )
+				return fetch_models ( arguments [ 'org' ], arguments [ 'key' ] )
+
+			else:
+
+				return True
 
 		else:
 
 			if is_cached_file_old ( f"models/{arguments [ 'model' ]}.info" ):
 
-				fetch_models ( arguments [ 'org' ], arguments [ 'key' ], arguments [ 'model' ] )
+				return fetch_models ( arguments [ 'org' ], arguments [ 'key' ], arguments [ 'model' ] )
+
+			else:
+
+				return True
 
 	else:
 
 		if is_cached_file_old ( 'models.info' ):
 
-				fetch_models ( arguments [ 'org' ], arguments [ 'key' ] )
+				return fetch_models ( arguments [ 'org' ], arguments [ 'key' ] )
+
+		else:
+
+			return True

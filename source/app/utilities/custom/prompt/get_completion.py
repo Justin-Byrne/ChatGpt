@@ -1,8 +1,8 @@
-from .query_completion 						import query_completion
+from .query_completion 							import query_completion
 
-from ..file.write_to_cache					import write_to_cache
+from ..file.write_to_cache						import write_to_cache
 
-from ...system.time.get_current_timestamp 	import get_current_timestamp
+from ...system.time.get_enumerated_timestamp 	import get_enumerated_timestamp
 
 def get_completion ( arguments ):
 
@@ -16,7 +16,7 @@ def get_completion ( arguments ):
 
 	if text:
 
-		timestamp = get_current_timestamp ( )
+		timestamp = get_enumerated_timestamp ( )
 
 		filename = f"responses/{timestamp [ 'year' ]}/{timestamp [ 'month' ]}-{timestamp [ 'day' ]}/{timestamp [ 'hour' ]}:{timestamp [ 'min' ]}:{timestamp [ 'sec' ]}.{timestamp [ 'mil' ]}"
 
